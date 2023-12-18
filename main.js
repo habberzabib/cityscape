@@ -6,8 +6,8 @@ let ctx = cnv.getContext("2d");
 cnv.width = 300;
 cnv.height = 650;
 
-// BLUE BACKGROUND
-ctx.fillStyle = "blue";
+//BACKGROUND
+ctx.fillStyle = "red";
 ctx.fillRect(0, 0, cnv.width, cnv.height);
 
 // DRAW LEFT BUILDING
@@ -34,15 +34,27 @@ ctx.fillRect(190, 20, 70, 20);
 
 //4x6
 ctx.fillStyle = "white";
-ctx.fillRect(40, 200, 10, 10);
-//5
-let n = ctx.fillRect(170, 120, 10, 500);
 
-while (n < 5) {
-  ctx.fillStyle = "white";
-  ctx.fillRect(170, 120, 10, 500);
+for (let col = 0; col < 4; col++) {
+  for (let row = 0; row < 6; row++) {
+    let x = 40 + col * 22;
+    let y = 215 + row * 22;
+    ctx.fillRect(x, y, 10, 10);
+  }
 }
-//6
 
+//5
 ctx.fillStyle = "white";
-ctx.fillRect(20, 375, 115, 25);
+
+for (let col = 0; col < 5; col++) {
+  let x = 170 + col * 25;
+  ctx.fillRect(x, 130, 10, 475);
+}
+
+//6
+ctx.fillStyle = "white";
+
+for (let row = 0; row < 6; row++) {
+  let y = 385 + row * 40;
+  ctx.fillRect(20, y, 115, 20);
+}
